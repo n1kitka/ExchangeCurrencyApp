@@ -24,5 +24,4 @@ class ApplicationCoordinator: Coordinator {
         window.rootViewController = tabBarController
     }
     
-    
 }
