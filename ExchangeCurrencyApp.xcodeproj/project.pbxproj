@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8FEE0DC12D4A519E00A66E98 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8FEE0DC02D4A519E00A66E98 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8F192C5E2D4A2B63000D1F24 /* ExchangeCurrencyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeCurrencyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEE0DC12D4A519E00A66E98 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = ExchangeCurrencyApp;
 			packageProductDependencies = (
+				8FEE0DC02D4A519E00A66E98 /* SnapKit */,
 			);
 			productName = ExchangeCurrencyApp;
 			productReference = 8F192C5E2D4A2B63000D1F24 /* ExchangeCurrencyApp.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 8F192C552D4A2B63000D1F24;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8FEE0DBF2D4A519D00A66E98 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8F192C5F2D4A2B63000D1F24 /* Products */;
 			projectDirPath = "";
@@ -333,6 +342,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8FEE0DBF2D4A519D00A66E98 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8FEE0DC02D4A519E00A66E98 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FEE0DBF2D4A519D00A66E98 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8F192C562D4A2B63000D1F24 /* Project object */;
 }

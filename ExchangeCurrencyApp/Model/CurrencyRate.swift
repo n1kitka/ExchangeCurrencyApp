@@ -12,6 +12,10 @@ struct CurrencyRate: Codable {
     let quoteCurrency: String
     let quote: Double
     let date: String
+    
+    var identifier: String {
+        return "\(baseCurrency) / \(quoteCurrency)"
+    }
 
     enum CodingKeys: String, CodingKey {
         case baseCurrency = "base_currency"
