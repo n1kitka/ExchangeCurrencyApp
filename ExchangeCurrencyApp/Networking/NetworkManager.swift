@@ -11,9 +11,17 @@ import Combine
 class NetworkManager {
     static let shared = NetworkManager()
     private let baseURL = "https://swop.cx/rest/rates"
-    private let apiKey = "e5d79bb7c7e5ba34b931979e2b6cb59d7b8f2cbe9984968d50c1f650004b0896"
+    private let secureApiKey = "API_KEY"
+
+    private var apiKey: String? {
+        return KeychainHelper.shared.get(secureApiKey)
+    }
 
     func fetchRates() -> AnyPublisher<[CurrencyRate], Error> {
+        guard let apiKey = apiKey else {
+            return Fail(error: URLError(.userAuthenticationRequired)).eraseToAnyPublisher()
+        }
+        
         var components = URLComponents(string: baseURL)
         components?.queryItems = [URLQueryItem(name: "api-key", value: apiKey)]
 

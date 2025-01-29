@@ -13,8 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        setupAPIKey()
+        
         return true
+    }
+    
+    private func setupAPIKey() {
+        let secureApiKey = "API_KEY"
+        
+        if KeychainHelper.shared.get(secureApiKey) == nil {
+            KeychainHelper.shared.save(secureApiKey, value: "e5d79bb7c7e5ba34b931979e2b6cb59d7b8f2cbe9984968d50c1f650004b0896")
+            //print("API Key stored securely in Keychain")
+        } else {
+            //print("API Key already exists in Keychain")
+        }
     }
 
     // MARK: UISceneSession Lifecycle
