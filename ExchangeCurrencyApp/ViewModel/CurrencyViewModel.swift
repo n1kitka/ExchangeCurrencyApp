@@ -10,6 +10,7 @@ import Combine
 
 class CurrencyViewModel: ObservableObject {
     @Published var rates: [CurrencyRate] = []
+    @Published var favoriteRates: [CurrencyRate] = []
     private var cancellables = Set<AnyCancellable>()
 
     func fetchRates() {
@@ -24,5 +25,15 @@ class CurrencyViewModel: ObservableObject {
                 self.rates = rates
             })
             .store(in: &cancellables)
+    }
+    
+    func addToFavorites(_ rate: CurrencyRate) {
+        if !favoriteRates.contains(where: { $0.identifier == rate.identifier }) {
+            favoriteRates.append(rate)
+        }
+    }
+    
+    func removeFromFavorites(_ rate: CurrencyRate) {
+        favoriteRates.removeAll { $0.identifier == rate.identifier }
     }
 }
